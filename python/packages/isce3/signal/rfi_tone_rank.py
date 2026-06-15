@@ -243,8 +243,8 @@ def fill_missing(z, fd, t, mask_replace, valid_rows, noise, interpolate=True,
     return zout
 
 
-def circular_gaussian_noise(n, σ=1, dtype=np.complex64):
-    return σ * (np.random.normal(size=n) + 1j * np.random.normal(size=n))
+def circular_gaussian_noise(n, sigma=1, dtype=np.complex64):
+    return sigma * (np.random.normal(size=n) + 1j * np.random.normal(size=n))
 
 
 def remove_loud_tones(
@@ -390,7 +390,7 @@ def remove_loud_tones(
         # TODO could weight by window
         block_ranges[j] = r[(cols.start + cols.stop) // 2]
 
-    # Generate a pool of noise with σ=1 once, and we'll scale it for each
+    # Generate a pool of noise with sigma=1 once, and we'll scale it for each
     # block as needed.  We'll generate a random offset for each block to
     # increase entropy without having to regenerate noise for each block.
     max_offset = num_az_blocks * num_range_blocks
@@ -423,8 +423,8 @@ def remove_loud_tones(
                 bandwidth,
             )
             if not detect_only:
-                σ = np.sqrt(0.5 / λ) if λ > 0.0 else 0.0
-                noise = σ * std_noise[np.random.randint(0, max_offset):]
+                sigma = np.sqrt(0.5 / λ) if λ > 0.0 else 0.0
+                noise = sigma * std_noise[np.random.randint(0, max_offset):]
                 fd = doppler.eval(block_times[iblock], block_ranges[j])
                 cols, window = slices_windows[j]
                 valid_rows = ((~mask_valid[:, cols]).mean(axis=1)

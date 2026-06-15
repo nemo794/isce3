@@ -376,8 +376,8 @@ def nan_aware_gaussian(image, sigma=1.5):
         Standard deviation of the Gaussian kernel. Controls the amount
         of smoothing.
 
-        - Larger sigma → stronger smoothing (larger effective kernel)
-        - Smaller sigma → weaker smoothing (preserves more detail)
+        - Larger sigma -> stronger smoothing (larger effective kernel)
+        - Smaller sigma -> weaker smoothing (preserves more detail)
         The effective kernel size is approximately:
             kernel_size ≈ 2 * ceil(3 * sigma) + 1
         If a sequence is provided, anisotropic smoothing is applied
@@ -1064,7 +1064,7 @@ def unwrapping_correction_with_filter(unw,
 
     This function iteratively applies either a Gaussian convolution or a
     median filter to correct phase unwrapping errors in an image. It adjusts
-    values modulo 2π during each iteration to correct phase errors.
+    values modulo 2*pi during each iteration to correct phase errors.
 
     Parameters
     ----------
@@ -1156,7 +1156,7 @@ def remove_small_components(image, min_cluster_pixels):
     n_valid = int(valid_mask.sum())
 
     if min_cluster_pixels == 0:
-        info_channel.log("min_cluster_pixels == 0 → "
+        info_channel.log("min_cluster_pixels == 0 -> "
                          "no components will be removed.")
         return image.copy()
 

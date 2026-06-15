@@ -619,11 +619,11 @@ def compute_differential_phase(
                         # Interpretation of input datasets depends on the
                         # processing context:
                         # - For main_diff_ms_band:
-                        #     first  → frequency A
-                        #     second → frequency B
+                        #     first  -> frequency A
+                        #     second -> frequency B
                         # - For main_diff_low_high_subband:
-                        #     first  → low subband
-                        #     second → high subband
+                        #     first  -> low subband
+                        #     second -> high subband
                         # Each mask provides:
                         #   - reference_valid: valid pixels in reference region
                         #   - secondary_valid: valid pixels in secondary region

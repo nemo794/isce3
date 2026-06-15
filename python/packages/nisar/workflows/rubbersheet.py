@@ -842,7 +842,7 @@ def _interpolate_offsets_by_idw(
         qpoints, k=k, workers=-1,
         **({'distance_upper_bound': radius} if radius is not None else {}))
 
-    # Ensure 2D — tree.query returns 1D when k=1
+    # Ensure 2D -- tree.query returns 1D when k=1
     dists = np.reshape(dists, (qpoints.shape[0], -1))
     idxs  = np.reshape(idxs,  (qpoints.shape[0], -1))
 

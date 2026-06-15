@@ -243,7 +243,7 @@ def get_relative_heading_on_geo_grid(
     # sign of `y_spacing` so that the skewed heading vector is still North-positive.
     heading = np.pi / 2 - np.arctan2(enu[1] * -y_spacing, enu[0] * x_spacing)
 
-    # Return the heading, wrapped from 0 to 2π.
+    # Return the heading, wrapped from 0 to 2*pi.
     return heading if heading > 0 else heading + 2 * np.pi
 
 

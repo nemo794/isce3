@@ -26,7 +26,7 @@ def bridge_unwrapped_phase(unw_phase: np.ndarray,
     producing integer cycle jumps between them. This function finds
     nearby components (within `radius` pixels), computes the median phase
     difference at their nearest boundary pixels, shifts one region to align it,
-    and merges the labels—effectively “bridging” the jump.
+    and merges the labels--effectively “bridging” the jump.
     Finally, it filters out speckle (small islands) and smooths
     mask edges via erosion.
 

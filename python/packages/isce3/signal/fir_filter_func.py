@@ -111,7 +111,7 @@ def _kaiser_irf(t, beta):
 def _coswin_irf(t, eta):
     """Impulse response (Fourier transform) of cosine window.
     """
-    # Could write with a single sinc(t) but singularities at ±1 require
+    # Could write with a single sinc(t) but singularities at +/-1 require
     # high-order Taylor expansion to maintain accuracy.  Simpler to just use
     # three sinc calls.
     a = (1 + eta) / 2
@@ -144,7 +144,7 @@ def design_shaped_lowpass_filter(bandwidth, window=None, stopatt=40.0,
     transition_width : float
         Total width of both transition regions as a fraction of `bandwidth`.
         Note that transitions are split evenly between pass and stop bands,
-        centered on ± bandwidth / 2.
+        centered on +/- bandwidth / 2.
     force_odd_len : bool
         Require odd filter length.
     fs : float

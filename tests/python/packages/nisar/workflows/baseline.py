@@ -230,7 +230,7 @@ def test_add_baseline(unit_test_params):
                     "range_end": unit_test_params.range_end,
                     }
 
-                # To unit‑test `add_baseline`, we append “safe” values—greater
+                # To unit-test `add_baseline`, we append “safe” values--greater
                 # than the minimum slant range and less than the maximum
                 # so we can confirm the function runs without crashing.
                 x_array = np.ones(2) * unit_test_params.coord_x
